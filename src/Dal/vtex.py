@@ -1,6 +1,5 @@
 import requests
 import time
-import json
 
 def collect_products(seller_id):
 

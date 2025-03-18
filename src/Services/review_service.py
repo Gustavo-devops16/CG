@@ -1,14 +1,8 @@
-import json
-from map_review import map_review
-from generate_review import generate_review
-from send_review import send_review
-from get_product import collect_products
-from verify_products import verify_products
-
-
-def load_products():
-    with open("verified_products_hirata.json", "r", encoding="utf-8") as file:
-        return json.load(file)
+from Mapper.map_review import map_review
+from Dal.c3po import generate_review
+from Controllers.send_review import send_review
+from Dal.vtex import collect_products
+from Mapper.verify_products import verify_products
 
 
 def get_reviews(seller_id):
@@ -48,5 +42,5 @@ def get_reviews(seller_id):
 
 
 
-get_reviews("odelli001") 
+
 
