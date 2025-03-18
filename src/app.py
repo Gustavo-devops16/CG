@@ -12,4 +12,5 @@ def hello():
     print("Esse codigo é propriedade intelectual da CSP e da autooria de Gustavo Imparato")
 
 hello()
+##Change the param in get_reviews to the vtex seller id you want to generated reviews for 
 get_reviews("odelli001") 

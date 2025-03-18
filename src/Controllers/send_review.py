@@ -1,5 +1,12 @@
-import requests
+import os
 import json
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+app_key = os.getenv("X_VTEX_API_AppKey")
+app_token = os.getenv("X_VTEX_API_AppToken")
+
 
 def send_review(review):
     print(f"Enviando avaliação: {review.get('title', 'Título não fornecido')} para a VTEX")
@@ -18,8 +25,8 @@ def send_review(review):
     headers = { 
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-VTEX-API-AppKey": "vtexappkey-compresuapeca-EXFYRB",
-        "X-VTEX-API-AppToken": "YTTDSLNTAADIGUNPOZYGNASSJZLWDTNNWPJNNTDLNUXVOAFQPKPVILGPBRCTQYHQOIWOVQOKCYFPKQXGPPVBTTXBKEVKKHBKZDIDKLIJMUWTEEBQRSAFFIUYAIQCBKFS"
+        "X-VTEX-API-AppKey": app_key,
+        "X-VTEX-API-AppToken": app_token
     }
 
     body = [

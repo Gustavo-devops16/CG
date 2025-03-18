@@ -1,5 +1,13 @@
-import requests
+import os
 import time
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+app_key = os.getenv("X_VTEX_API_AppKey")    
+app_token = os.getenv("X_VTEX_API_AppToken")
+print(app_key)
+print(app_token)
 
 def collect_products(seller_id):
 
@@ -7,8 +15,8 @@ def collect_products(seller_id):
     headers = {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-VTEX-API-AppKey": "vtexappkey-compresuapeca-EXFYRB",
-        "X-VTEX-API-AppToken": "YTTDSLNTAADIGUNPOZYGNASSJZLWDTNNWPJNNTDLNUXVOAFQPKPVILGPBRCTQYHQOIWOVQOKCYFPKQXGPPVBTTXBKEVKKHBKZDIDKLIJMUWTEEBQRSAFFIUYAIQCBKFS"
+        "X-VTEX-API-AppKey": app_key,
+        "X-VTEX-API-AppToken": app_token
     }
 
 
